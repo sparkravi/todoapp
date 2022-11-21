@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script src="https://kit.fontawesome.com/8fcf490b76.js" crossorigin="anonymous"></script>
+	<script type="text/javascript">
+		
+		function todo(){
+			let newTodo=document.getElementById("newTodo").value
+			//console.log(newTodo)
+			document.getElementById("newTodo").value=""
+			if(newTodo===""){
+				alert("enter a todo ")
+			}
+			else{
+				addTodo(newTodo)
+			}
+		} 
+		
+		function addTodo(newTodo){
+			const d=new Date();
+			//document.getElementById("demo").innerHTML=d;
+			let ul=document.querySelector("ul")
+			console.log(ul)
+			let li=document.createElement("li")
+			li.innerHTML=`
+			<span class="listitem">${newTodo} ${d.getHours()}:${d.getMinutes()}</spam
+			<i class="fa-solid fa-circle-xmark"></i>`
+			li.classList.add("list-type")
+			ul.appendChild(li)
+		}
+		
+	</script>
+
+	<style type="text/css">
+		.Todo{
+			background-color: grey;
+			text-align: center;
+			padding-top: 23%;
+			background-image: url(https://static.toiimg.com/photo/msid-66081026,width-96,height-65.cms);
+			background-image: no-repeat;
+			background-size: cover;
+		}
+		.btn{
+			background-color: blue;
+			color: white;
+			border-radius: 25px;
+			padding-bottom: 9px;
+			padding-top: 9px;
+			padding-right: 10px;
+			text-align: center;
+			width: 8%;
+
+		}
+		.new{
+			border-radius: 25px;
+			border: 1px solid white;
+			background-color: white;
+			width: 30%;
+			padding: 0.6%;
+			margin: auto;
+		}
+		.new input{
+			border: none;
+			width: 85%;
+		}
+	</style>
+
+</head>
+<body class="Todo"> 
+	<div class="new">
+		<input type="text" value="" id="newTodo" placeholder="enter into todo"/> 
+		<i class="fa-solid fa-magnifying-glass"></i>
+	</div>
+	<ul>
+	</ul>
+	<button class="btn" onclick="todo()">submit</button>
+</body>
+</html>
+
+
+
+
+
+
+
+
